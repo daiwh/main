@@ -19,7 +19,8 @@
         <activity android:name=".Login" />
         <activity android:name=".Login" />
         <activity android:name=".LoadingActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ShakeActivity"></activity>
     </application>
 
 </manifest>
