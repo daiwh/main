@@ -1,5 +1,6 @@
 package daiwenhai.weixin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.util.Calendar;
 
-public class ChatActivity extends AppCompatActivity {
+
+public class ChatActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button mBtnSend;
     private Button mBtnBack;
@@ -68,7 +71,48 @@ public class ChatActivity extends AppCompatActivity {
                 send();
                 break;
             case R.id.btn_back:
-                finish
+                finish();
+                break;
         }
     }
+    private void send()
+    {
+        String contString = mEditTextContent.getText().toString();
+        if(contString.length() > 0){
+            ChatMsgEntity entity = new ChatMsgEntity();
+            entity.setData(getData());
+            entity.setName("我");
+            entity.setMsgType(false);
+            entity.setText(contString);
+
+            mDataArrays.add(entity);
+            mAdapter.notityDataSetChanged();
+
+            mEditTextContent.setText("");
+
+            mListView.setSelection(mListView.getCount()-1);
+        }
+    }
+
+    private String getData()
+    {
+        Calendar calendar = Calendar.getInstance();
+        String year = String.valueOf(calendar.get(Calendar.YEAR));
+        String month = String.valueOf(calendar.get(Calendar.MONTH));
+        String day  = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)+1);
+        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
+        String minutes = String.valueOf(calendar.get(Calendar.MINUTE));
+
+        StringBuffer time = new StringBuffer();
+        time.append(year + "-" + month + "-" + day + " " + hour +":" + minutes);
+        return time.toString();
+    }
+
+    public void head_xiaohei(View view)//标题栏返回按钮
+    {
+        Intent intent = new Intent();
+        intent.setClass(ChatActivity.this, InfoXiaohei.class);
+        startActivity(intent);
+    }
+
 }
