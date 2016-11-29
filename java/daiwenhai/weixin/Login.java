@@ -1,19 +1,21 @@
 package daiwenhai.weixin;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
     private EditText mUser;
     private EditText mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
@@ -24,15 +26,14 @@ public class Login extends AppCompatActivity {
     /*登陆事件*/
     public void login_mainweixin(View view){
         if(mUser.getText().toString().equals("daidia") && mPassword.getText().toString().equals("daidai")){
+            UserMessage.userName = mUser.getText().toString();
             Intent intent = new Intent();
             intent.setClass(Login.this, LoadingActivity.class);
             startActivity(intent);
         }else {
-             new AlertDialog.Builder(Login.this)
-            .setIcon(getResources().getDrawable(R.drawable.login_error_icon))
-             .setTitle("登陆失败")
-             .setMessage("账号或密码输入不正确")
-             .create().show();
+            Toast.makeText(Login.this, "账号或密码错误，请重新输入", Toast.LENGTH_LONG).show();
+            mUser.setText("");
+            mPassword.setText("");
         }
     }
     /*标题栏返回按钮*/
@@ -41,7 +42,7 @@ public class Login extends AppCompatActivity {
     }
     /*忘记密码按钮*/
     public void login_pw(View view){
-        Uri uri = Uri.parse("http://3g.qq.com");
+        Uri uri = Uri.parse("http://123.207.124.135:8080/personweb/personweb/loginin.jsp");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
