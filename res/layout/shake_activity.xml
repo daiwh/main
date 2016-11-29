@@ -83,9 +83,9 @@
     <SlidingDrawer
         android:id="@+id/slidingDrawer1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:content="@id/content"
-        android:handle="@id/handle">
+        android:layout_height="match_parent">
+       <!-- android:content="@id/content"
+        android:handle="@id/handle"-->
         <Button
             android:id="@+id/handle"
             android:layout_width="wrap_content"

@@ -18,8 +18,8 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     private Button mBtnBack;
     private EditText mEditTextContent;
     private ListView mListView;
-    private ChatMsgViewAdapter mAdapter;
-    private List<ChatMsgEntity> mDataArrays = new List<ChatMsgEntity>();
+   // private ChatMsgViewAdapter mAdapter;
+    //private List<ChatMsgEntity> mDataArrays = new List<ChatMsgEntity>();
 
     private String[] msgArray = new String[]{"are you ok?","ok,ok","are you ok?","ok,ok","are you ok?","ok,ok","are you ok?","ok,ok"};
     private String[] dataArray = new String[]{"2016-11-27 18:00","2016-11-27 18:00",
@@ -47,7 +47,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         mEditTextContent = (EditText)findViewById(R.id.et_sendmessage);
     }
     public void initData(){
-        for(int i =0; i<COUNT ; i++){
+      /*  for(int i =0; i<COUNT ; i++){
             ChatMsgEntity entity = new ChatMsgEntity();
             entity.setData(dataArray[i]);
             if(i%2 ==0 ){
@@ -60,7 +60,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             entity.setText(msgArray[i]);
             mDataArrays.add(entity);
         }
-        mAdapter = new ChatMsgViewAdapter(mAdapter);
+        mAdapter = new ChatMsgViewAdapter(mAdapter);*/
     }
 
     @Override
@@ -77,7 +77,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void send()
     {
-        String contString = mEditTextContent.getText().toString();
+       /* String contString = mEditTextContent.getText().toString();
         if(contString.length() > 0){
             ChatMsgEntity entity = new ChatMsgEntity();
             entity.setData(getData());
@@ -91,7 +91,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             mEditTextContent.setText("");
 
             mListView.setSelection(mListView.getCount()-1);
-        }
+        }*/
     }
 
     private String getData()

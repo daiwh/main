@@ -31,7 +31,7 @@ public class ShakeActivity extends AppCompatActivity {
 
        // drawerSet(); //设置drawer监听，切换按钮的方向
         mVibrator = (Vibrator) getApplication().getSystemService(VIBRATOR_SERVICE);
-        mImgUp = (RelativeLayout) findViewById(R.id.shankeImgUp);
+        mImgUp = (RelativeLayout) findViewById(R.id.shakeImgUp);
         mImgDown = (RelativeLayout) findViewById(R.id.shakeImgDown);
         mTitle = (RelativeLayout) findViewById(R.id.shake_title_bar);
         mDrawer = (SlidingDrawer) findViewById(R.id.slidingDrawer1);
@@ -71,7 +71,7 @@ public class ShakeActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast mToast;
-                        mToast = Toast.makeText(getApplicationContext(), "抱歉，没有找到在同一时刻摇一摇的用户", 10);
+                        mToast = Toast.makeText(getApplicationContext(), "抱歉，没有找到在同一时刻摇一摇的用户", Toast.LENGTH_SHORT);
                         mToast.show();
                         mVibrator.cancel();
                         mShakeListener.start();

@@ -212,8 +212,8 @@ public class MainWeixin extends AppCompatActivity {
                 menuWindow.showAtLocation(this.findViewById(R.id.mainweixin), Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);//设置layout在PopupWindow中的显示位置
 
                 //获取main中的控件
-                mClose = (LinearLayout)layout.findViewById(R.id.menu_close);
-                mCloseBtn = (LinearLayout)layout.findViewById(R.id.menu_close_btn);
+                //mClose = (LinearLayout)layout.findViewById(R.id.menu_close);
+               // mCloseBtn = (LinearLayout)layout.findViewById(R.id.menu_close_btn);
 
                 mCloseBtn.setOnClickListener(new View.OnClickListener() {
                     @Override

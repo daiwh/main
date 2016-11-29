@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
         mUser = (EditText)findViewById(R.id.login_user_edit);
-        mPassword = (EditText)findViewById(R.id.login_passwd_edit);
+        mPassword = (EditText)findViewById(R.id.login_password_edit);
     }
 
     /*登陆事件*/

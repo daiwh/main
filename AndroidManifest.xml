@@ -17,10 +17,15 @@
         </activity>
         <activity android:name=".MainWeixin" />
         <activity android:name=".Login" />
-        <activity android:name=".Login" />
         <activity android:name=".LoadingActivity" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".ShakeActivity"></activity>
+        <activity android:name=".ShakeActivity" />
+        <activity android:name=".Welcome" />
+        <activity android:name=".InfoXiaohei" />
+        <activity android:name=".Whatsnew" />
+        <activity android:name=".Exit" />
+        <activity android:name=".MainTopRightDialog" />
+        <activity android:name=".ExitFromSettings"></activity>
     </application>
 
 </manifest>
