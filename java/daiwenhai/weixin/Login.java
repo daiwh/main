@@ -13,6 +13,8 @@ public class Login extends Activity {
     private EditText mUser;
     private EditText mPassword;
 
+    private DB db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -25,13 +27,14 @@ public class Login extends Activity {
 
     /*登陆事件*/
     public void login_mainweixin(View view){
-        if(mUser.getText().toString().equals("daidia") && mPassword.getText().toString().equals("daidai")){
+        db = new DB();
+        if(db.login(mUser.getText().toString(), mPassword.getText().toString())){
             UserMessage.userName = mUser.getText().toString();
             Intent intent = new Intent();
             intent.setClass(Login.this, LoadingActivity.class);
             startActivity(intent);
         }else {
-            Toast.makeText(Login.this, "账号或密码错误，请重新输入", Toast.LENGTH_LONG).show();
+            Toast.makeText(Login.this, "账号或密码错误，请重新输入", Toast.LENGTH_SHORT).show();
             mUser.setText("");
             mPassword.setText("");
         }
