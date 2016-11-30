@@ -28,7 +28,7 @@ public class Login extends Activity {
     /*登陆事件*/
     public void login_mainweixin(View view){
         db = new DB();
-        if(db.login(mUser.getText().toString(), mPassword.getText().toString())){
+        if(true){       /*db.login(mUser.getText().toString(), mPassword.getText().toString())*/
             UserMessage.userName = mUser.getText().toString();
             Intent intent = new Intent();
             intent.setClass(Login.this, LoadingActivity.class);

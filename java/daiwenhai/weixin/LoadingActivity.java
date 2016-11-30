@@ -21,6 +21,6 @@ public class LoadingActivity extends AppCompatActivity {
                 LoadingActivity.this.finish();
                 Toast.makeText(getApplicationContext(), "登陆成功", Toast.LENGTH_SHORT).show();
             }
-        },200);
+        },1000);
     }
 }
